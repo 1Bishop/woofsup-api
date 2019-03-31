@@ -5,8 +5,10 @@ from PIL import Image
 import numpy as np
 import flask
 import io
+from flask_cors import CORS
 
 app = flask.Flask(__name__)
+CORS(app)
 model = None
 
 def load_model():
