@@ -32,7 +32,7 @@ def dog_detector(data):
   return ((prediction <= 268) & (prediction >= 151))
 
 # BELOW IS ONLY INCLUDED FOR GUNICORN
-# load_model()
+load_model()
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -66,7 +66,7 @@ if __name__ == "__main__":
   print(("* Loading Keras model and Flask starting server..."
     "please wait until server has fully started"))
   load_model()
-  app.run(debug = False, threaded = False)
+  app.run('0.0.0.0', debug = False, threaded = False)
 
 # app.run(debug = False, threaded = False)
 
